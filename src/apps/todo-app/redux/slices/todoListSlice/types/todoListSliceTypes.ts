@@ -1,5 +1,5 @@
-import { newTodo } from "../../newTodoSlice/types/newTodoSliceTypes";
+import { todoInterface } from "../../todoSlice/types/todoSliceTypes";
 
 export interface todoListSliceInitialState {
-    todoList: newTodo[]
+    todoList: todoInterface[]
 }

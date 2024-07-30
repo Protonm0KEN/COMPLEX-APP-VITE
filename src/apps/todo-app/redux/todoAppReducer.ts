@@ -1,8 +1,13 @@
 import { combineReducers } from "redux";
 import todoListSlice from "./slices/todoListSlice/todoListSlice";
-import newTodoSlice from "./slices/newTodoSlice/newTodoSlice";
+import todoSlice from "./slices/todoSlice/todoSlice";
+import todoGroupSlice from "./slices/todoGroupSlice/todoGroupSlice";
 
 export const todoAppReducer = combineReducers({
-    newTodo: newTodoSlice,
+    todo: todoSlice,
     todoList: todoListSlice,
+
+
+    todoGroup: todoGroupSlice,
+    todoGroups: todoGroupsSlice
 })

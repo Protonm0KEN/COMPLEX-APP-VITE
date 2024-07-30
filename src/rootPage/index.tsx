@@ -1,7 +1,9 @@
 import "./ui/styles.scss"
 const RootPage = () => {
   return (
-    <div>RootPage</div>
+    <>
+      RootPage
+    </>
   )
 }
 export default RootPage

@@ -1,0 +1,113 @@
+.CreateTodoForm {
+    max-width: 500px;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: fit-content;
+    background: white;
+    position: relative;
+
+    &_closeFormBtn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: red;
+        border-radius: 25%;
+        padding: 10px;
+        border: 2px solid black;
+        color: white;
+        cursor: pointer;
+    }
+
+    &_layout {
+        transition: 0.3s;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        transform: translateY(-100%);
+
+        &.active {
+            transform: translateY(0);
+        }
+    }
+
+    &_step {
+        font-family: "Rubik";
+        font-size: 18px;
+
+    }
+
+    &_finishDate {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-family: "Rubik";
+        font-size: 18px;
+
+        & input {
+            font-family: "Rubik";
+            font-size: 18px;
+        }
+    }
+
+    &_fields {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border: 2px solid black;
+        border-radius: 20px;
+        padding: 20px;
+
+        & label {
+            font-family: "Rubik";
+            font-size: 18px;
+        }
+
+        & input {
+            width: 100%;
+            border: none;
+            outline: none;
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 10px;
+
+            &::placeholder {
+                font-family: "Rubik";
+            }
+        }
+    }
+
+    &_addSteps {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        & label {
+            font-family: "Rubik";
+            font-size: 18px;
+        }
+
+        & input {
+            width: 100%;
+            border: none;
+            outline: none;
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 10px;
+
+            &::placeholder {
+                font-family: "Rubik";
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.TodoGroupsBar{
+    display: flex;
+    &_tabs{
+        display: flex;
+        width: 100%;
+    }
+    &_tab{
+        font-family: "Rubik";
+        font-size: 18px;
+        text-align: center;
+        padding: 5px 10px 5px 10px;
+        border: 2px solid black;
+        cursor: pointer;
+        background: white;
+        color: black;
+        width: 100%;
+    }
+    &_createTodoGroupBtn{
+        font-family: "Rubik";
+        font-size: 18px;
+        text-align: center;
+        padding: 5px 10px 5px 10px;
+        border: 2px solid black;
+        cursor: pointer;
+        background: white;
+        width: 100%;
+    }
+}

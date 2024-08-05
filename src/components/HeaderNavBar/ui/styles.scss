@@ -1,0 +1,32 @@
+.HeaderNavBar {
+    width: 100%;
+    border-bottom: 4px solid black;
+
+    &_nav {
+        display: flex;
+        width: 100%;
+
+        & .nav_links {
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            & a {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 15px 20px 15px 20px;
+                border-right: 2px solid black;
+                border-left: 2px solid black;
+                font-family: "Rubik";
+                font-size: 18px;
+                color: black;
+                transition: 0.2s;
+                &:hover{
+                    background: rgb(22, 22, 22);
+                    color: white;
+                }
+            }
+        }
+    }
+}

@@ -1,22 +1,26 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { todoSliceInitialState } from "./types/todoSliceTypes";
 import { todoGroupInterface } from "../todoGroupSlice/types/todoGroupSliceTypes";
+import { todoStepInterface } from "../todoStep/types/todoStepSliceTypes";
 
 const DateObj = new Date()
-const todoFormatedDate = `${DateObj.getDate()}.${DateObj.getMonth() < 10 ? `0${DateObj.getMonth()}` : DateObj.getMonth()}.${DateObj.getFullYear()}`
-const todoFormatedTime = `${DateObj.getHours()}:${DateObj.getMinutes() < 10 ? `0${DateObj.getMinutes()}` : DateObj.getMinutes()}`
+const todoFormatedDateOfCreation = `${DateObj.getDate()}.${DateObj.getMonth() < 10 ? `0${DateObj.getMonth() + 1}` : DateObj.getMonth()}.${DateObj.getFullYear()}`
+const todoFormatedTimeOfCreation = `${DateObj.getHours()}:${DateObj.getMinutes() < 10 ? `0${DateObj.getMinutes()}` : DateObj.getMinutes()}`
 const initialState: todoSliceInitialState = {
     //todo general
     todoName: "",
     todoContent: "",
     todoId: Math.random().toString(16).slice(2),
     //todo time
-    todoDateOfCreation: todoFormatedDate,
-    todoTimeOfCreation: todoFormatedTime,
-    todoGroup: {
-        todoGroupName: "",
-        todoGroupId: ""
-    }
+    todoDateOfCreation: todoFormatedDateOfCreation,
+    todoTimeOfCreation: todoFormatedTimeOfCreation,
+    todoGroupName: "",
+
+    //todo steps
+    todoSteps: [],
+    todoDateOfFinishing: "",
+    todoTimeOfFinishing: "",
+    todoState: "active"
 }
 
 const todoSlice = createSlice({
@@ -53,9 +57,16 @@ const todoSlice = createSlice({
 
         //todo group
         addTodoToTodoGroup: (state, action: PayloadAction<todoGroupInterface>) => {
-            state.todoGroup.todoGroupName = action.payload.todoGroupName
-            state.todoGroup.todoGroupId = action.payload.todoGroupId
+            state.todoGroupName = action.payload.todoGroupName
         },
+
+        //todo steps
+        addStepToTodoSteps: (state, action: PayloadAction<todoStepInterface>) => {
+            state.todoSteps.push(action.payload)
+        } ,
+        updateTodoSteps: (state, action: PayloadAction<[]>) => {
+            state.todoSteps = action.payload
+        }
     }
 })
 export const {
@@ -69,6 +80,8 @@ export const {
     setTodoDateOfFinishing,
     setTodoTimeOfFinishing,
 
-    addTodoToTodoGroup
+    addTodoToTodoGroup,
+    addStepToTodoSteps,
+    updateTodoSteps
 } = todoSlice.actions
 export default todoSlice.reducer

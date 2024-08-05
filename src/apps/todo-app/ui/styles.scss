@@ -1,0 +1,22 @@
+
+.TodoApp{
+    font-family: "Rubik";
+    &_addNewTodoButton{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0px 20px 0px;
+        width: 100%;
+        height: 25px;
+        background: white;
+        border: 2px solid black;
+        cursor: pointer;
+        color: black;
+        transition: 0.3s;
+        &:hover{
+            background: black;
+            color: white;
+        }
+    }
+}

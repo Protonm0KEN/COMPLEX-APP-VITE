@@ -1,4 +1,4 @@
-import { todoGroup } from "../../todoGroupSlice/types/todoGroupSliceTypes";
+import { todoStepInterface } from "../../todoStep/types/todoStepSliceTypes";
 
 export interface todoInterface  {
 
@@ -10,10 +10,16 @@ export interface todoInterface  {
     //todo time 
     todoDateOfCreation: string,
     todoTimeOfCreation: string,
-    todoDateOfFinishing?: string,
-    todoTimeOfFinishing?: string,
+    todoDateOfFinishing: string,
+    todoTimeOfFinishing: string,
 
     //todo group
-    todoGroup: todoGroup
+    todoGroupName: string
+
+    //todo steps
+    todoSteps: todoStepInterface[]
+
+    //todo state
+    todoState: string
 }
 export interface todoSliceInitialState extends todoInterface {}

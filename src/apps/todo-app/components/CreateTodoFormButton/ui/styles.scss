@@ -1,0 +1,17 @@
+.CreateTodoFormButton {
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+    color: black;
+    outline: none;
+    background: white;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        background: black;
+        color: white;
+
+    }
+}
